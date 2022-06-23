@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        循环语句
+            通过循环语句可以反复的执行一段代码多次
+        while循环
+        语法：
+            while(条件表达式){
+                语句...
+            }
+        执行流程：
+            while语句在执行时，
+            会先对条件表达式进行求值判断，
+            如果判断结果为false，则终止循环
+            如果判断结果为true，则执行循环体
+            循环体执行完毕，继续对条件表达式进行求值判断，依此类推
+
+        do-while循环
+        语法：
+            do{  
+                语句...  
+            }while(条件表达式)  
+        执行流程：
+            do...while在执行时，
+            会先执行do后的循环体，然后在对条件表达式进行判断，
+            如果判断判断结果为false，则终止循环。
+            如果判断结果为true，则继续执行循环体，依此类推
+
+        和while的区别：
+        while：先判断后执行
+        do-while: 先执行后判断
+        但是do-hile可以确保循环体至少执行一次。
+        */
+        
+
+        //创建一个循环，必须的三件套
+        //1、初始化一个变量
+        var i=0;
+        //2、在循环中设置一个条件表达式
+        while(i<10){
+            //3、定义一个更新表达式，每次更新初始化变量
+            document.write(i++ + '\n');
+        }
+
+
+
+        /*假如投资的年利率为5%，试求从1000块增长到5000块，需要花费多少年
+        */
+
+        //定义一个变量，表示当前的钱数
+        var money=1000,s=0;
+        while(money<=5000){
+            money=money*1.05;
+            s=s+1;
+        }
+        alert(s);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

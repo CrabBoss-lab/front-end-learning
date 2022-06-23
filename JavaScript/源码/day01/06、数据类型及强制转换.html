@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*数据类型指的是字面量的类型
+            在js中一共有六种数据类型
+               String 字符串
+               Number 数值
+               Boolean 布尔值
+               Null 空值
+               Undefine 未定义
+               object 对象
+            
+       其中String\Number\Boolean\Null \Undefine属于基本数据类型
+       而object属于引用数据类型
+       */
+      
+
+
+
+
+
+
+
+
+
+
+
+        /*String字符串
+            在js中字符串需要使用引号引起来
+            使用双引号或单引号都可以,但是不要混用(前单后双)
+            引号不能嵌套,双引号不能放双引号,单引号不能放单引号
+        */
+        //    var str="hello";
+        //    console.log(str);
+       /*在字符串中可以使用\作为转义字符
+            当表示一些特殊符号时可以在其前使用\进行转义
+            \"表示" 
+            \'表示' 
+            \n表示换行
+            \t表示制表符 相当于按了以下tab
+            \\表示\
+       */
+        // str ="我说:\"我好帅\"";
+        // console.log(str);
+      
+        // //输出字面量  字符串str
+        // alert("str");
+        // //输出变量str
+        // alert(str);
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /*Number数值
+        在js中所有的数值都是number'类型
+            包括整数和浮点数(小数)
+        */
+        //数字123
+        var a=123;
+        //字符串123
+        var b="123";
+        /*
+            可以用一个运算符typeof来检查一个变量的类型
+            语法:typeof 变量
+            检查字符串时,会返回string
+            检查数值时,会返回number
+
+        */
+        console.log(typeof a);
+        console.log(a);
+        console.log(b);
+
+        /*js中可以表示的数字的最大值
+            Number.MAX_VALUE
+            1.7976931348623157e+308
+          
+        如果使用Number表示的狮子超过了最大值,则会返回Infinity,表示正无穷
+        Infinity表示正无穷
+        -Infinity表示负无穷
+            使用typeof检查Infinity会返回number
+        */
+        console.log(Number.MAX_VALUE);
+
+        var a="abc"*"bcd";
+        console.log(a);
+        /*NaN表示一个特殊的数字,表示Not A Number
+            使用typeof检查NAN会返回number
+        */
+
+        console.log(Number.MIN_VALUE);
+        /*  NUmber.MIN_VALUE 大于0的最小值
+                5e-324
+        */
+
+        var c=4656546+6456;
+        /*在js中整数的运算基本可以保证精确
+        */
+       
+        var c=0.1+0.2;
+        //如果使用js进行浮点元素,可能得到一个不精确的结果
+        //所以千万不要使用js进行精度要求比较高的运算
+
+
+
+
+
+
+
+
+
+
+
+
+        /*Boolean 布尔值
+            布尔值只有两个，主要用来做逻辑判断
+            true 表示逻辑上的真
+            false 表示逻辑上的假
+        使用typeof检查一个布尔值，会返回Boolean
+        */
+       var bool =true;
+       console.log(bool);
+       console.log(typeof bool);
+
+
+
+
+
+
+       /*Null 空值
+       类型的值只有一个，就是null
+            null这个值专门用来表示一个为空的对象
+            使用typeof检查一个null值时，会返回object
+       */
+      var a = null;
+      console.log(a);
+      console.log(typeof a);
+
+
+      /*Undefined 未定义
+      类型只有一个，就是undefined
+        当我们声明一个变量，但是并不给变量赋值时，它的值就是undefined
+        使用typeof检查一个undefined值时，会返回undefined
+      */
+     var b;
+     console.log(b);
+     console.log(typeof b);
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /*
+    */
+   /*将其他数据类型转换为string
+   方式一：
+        -调用被转换数据类型的toString()方法
+        -该方法不会影响到原变量，它会将转换的结果返回
+        -但是注意：null和undefined这两个值没有toString()方法
+            如果调用他们的方法，会报错
+    方式二：
+        -调用String()函数，并将被转换的数据作为参数传递给函数
+        -使用String()函数做强制类型转换时，
+            对于Number和Boolean实际上就是调用的toString()方法
+            但是对于null和undefined，就不会调用toString()方法
+                    它会将null直接转换为"null"
+                    将undefined直接转换成"undefined"
+   */
+    var a = 123;
+    //调用a的string()方法
+    //调用xxx的yyy()方法，就是xxx.yyy()
+    a = a.toString();
+
+    a=true;
+    a=a.toString();
+    
+
+    //null和undefined会报错
+    a=null;
+    a= a.toString();//报错
+
+    a=undefined;
+    a=a.toString();//报错
+
+    console.log(typeof a);
+    console.log(a);
+
+
+
+
+    a=123;
+    //调用String()函数，来将a转换为字符串
+    a=String(a);
+   
+    a=null;
+    a=String(a);
+    
+    a=undefined;
+    a=String(a);
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /*将其他数据类型转换为number
+    方式一：
+        使用Number()函数 
+            字符串-->数字
+                1）如果时纯数字的字符串，则直接将其转换成数字
+                2）如果字符串中有非数字的内容，则转换为NaN
+                3）如果字符串是一个空字符串或者是一个全是空格的字符串，则转换为0
+            布尔-->数字
+                1）true转成1
+                2）false转成0
+            null-->数字
+                结果是0
+            undefined-->数字
+                结果是NaN
+    方式二:
+        -这种方式专门用来对付字符串
+        -parseInt()  把一个字符串转换成一个整数
+        -parseFloat() 把一个字符串转换成一个浮点数
+
+    */
+   var a="123";
+    
+   //调用NUmber()函数来将a转换成Number类型
+    a =NUmber(a);
+    
+    a="123px";
+    //调用parseInt()函数来将a转换成Number类型
+    /*
+        parseInt()可以将一个字符串中的有效的整数部分取出来
+        然后转换成number
+    */
+    a=parseInt(a);
+    
+    a="123.456px"
+    //调用parseFloat()函数将a转换成number类型，不同的是它可以获得有效的小数部分
+    a=parseFloat(a);
+
+
+    /*
+        如果对非string使用parseInt()或parseFloat()
+            它会先将其转换为string然后再操作
+    */
+   a=true;
+   a=praseInt(a);
+   
+
+   a=198.15;
+   a=parseInt(a);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /*将其他数据类型转换为Boolean
+            方式：使用Boolean()函数
+                    -数字-->布尔
+                        除了0和NaN，其余都是true
+                    -字符串-->布尔
+                        除了空串，其余都是true
+                    -null-->布尔
+                        结果是false
+                    -undefined-->布尔
+                        结果是false
+                    -对象也会转换为true
+        */
+       var  a=123;//true
+       a=-123;//true
+       a=0;//false
+       a=NaN;//false
+
+       a=undefined;//false
+       
+       //调用Boolean()函数来将a转换为布尔值
+       a=Boolean(a);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

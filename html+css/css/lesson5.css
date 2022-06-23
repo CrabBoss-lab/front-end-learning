@@ -1,0 +1,73 @@
+
+
+
+
+
+/*div{
+	width: 100px;
+	height: 100px;
+	background-color: red;
+	border: 10px solid black;
+	padding: 10px 20px 30px;
+	margin: 10px 20px;
+}*/
+/*realwidth  :160px  100+10+10+20+20
+realheight :160px 100+10+10+10+30
+margin不算盒子，所以计算时不加：*/
+
+/*
+
+
+
+
+
+
+/*
+div{
+	position:absolute;
+	left:100px;
+	top:200px;
+	width: 100px;
+	height:100px;
+	background-color:red;
+}*/
+
+
+
+
+
+
+/**{
+	margin: 0;
+	padding: 0;
+}
+.demo{
+	position:absolute;
+	width: 100px;
+	height: 100px;
+	background-color: red;
+	opacity: 0.5;
+}
+.box{
+	width: 150px;
+	height: 150px;
+	background-color: green;
+}*/
+
+
+
+
+
+*{
+	margin: 0;
+	padding: 0;
+}
+div{
+	position: fixed;
+	left: 100px;
+	top: 300px;
+	width: 50px;
+	height: 200px;
+	background-color:#f40;
+	color:#fff;
+}

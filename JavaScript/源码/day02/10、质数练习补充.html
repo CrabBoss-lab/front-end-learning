@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+         /*
+            优化一：加break；[32]
+            优化二：修改j<i为j<Math.sqrt(i)[27]
+
+         */
+
+
+          /*测试程序的性能
+          在程序执行前，开启计时器
+          console.time("定时器的名字")可以用来开启一个定时器
+          在程序结束后，停止计时器
+          console.timeEnd("计时器的名字")可以用来停止一个计时器
+          */
+
+        console.time("test");
+
+         for(var i=2;i<=100;i++){
+            var flag=true;
+            for(var j=2;j<Math.sqrt(i);j++){
+                if(i%j==0){
+                    flag=false;
+                    //一旦进入判断，则证明i不可能时质数了，此时循环再执行已经没有意义了
+                    //所以可以使用break来结束循环
+                    break;//加break性能提高
+                }
+            }
+            if(flag){
+                console.log(i);
+            }
+         }
+         
+         console.timeEnd("test");
+       
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

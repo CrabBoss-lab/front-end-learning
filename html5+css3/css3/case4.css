@@ -1,0 +1,18 @@
+a{
+    display: block;
+    width:250px;
+    height: 40px;
+    background-color: #55585a;
+    font-style: 14px;
+    color: #fff;
+    text-decoration: none;
+    line-height: 40px;
+
+    /* text-indent: 2em; */
+    /* 修改 */
+    padding-left:30px;
+
+}
+a:hover{
+    background-color:  #ff6700; 
+}

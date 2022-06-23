@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        for语句
+        语法：
+            for(①初始化表达式 ; ②条件表达式 ; ④更新表达式){  
+                     ③语句...  
+            }  
+        执行流程：
+            1、执行①初始化表达式，初始化一个变量，
+            2、执行②条件表达式，
+                如果判断结果为true，则执行③循环体
+                如果为false，则终止循环
+            3、执行④更新表达式，对变量进行更新，更新表达式执行完毕重复②
+        */
+
+        /*练习
+        打印1-100之间的所有奇数之和
+        */
+        var sum=0;
+        for(var i=1;i<=100;i++){
+            if(i%2!=0){
+                sum=sum+i;
+
+            }
+        }
+        alert(sum);
+        /*
+
+
+        打印1-100之间所有7的倍数的个数及总和
+        */
+       var sum=0,num=0;
+        for(var i=1;i<=100;i++){
+            if(i%7==0){
+                sum=sum+i;
+                num=num+1;
+
+            }
+        }
+        alert("个数为"+num);
+        alert("总和为"+sum);
+
+
+
+        /*
+        水仙花数
+        水仙花数是指一个3位数，它的每个位上的数字的3次幂之和等于它本身（例如：13+53+33=153）
+        题：请打印所有的水仙花数
+        */
+
+        for(var i=100;i<1000;i++){
+            var bai=parseInt(i/100);
+            var shi=parseInt((i-bai*100)/10);
+            var ge=i%10;
+            if(bai*bai*bai+shi*shi*shi+ge*ge*ge==i){
+                console.log(i);
+            }
+
+        }
+
+        
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

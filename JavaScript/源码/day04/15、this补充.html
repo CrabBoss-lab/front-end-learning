@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //一个name属性
+        var name="全局";
+
+        //创建一个fun()函数
+        function fun() {
+            console.log(this.name);//希望里面的值时一个可变的，可以加this
+        
+        }
+
+        //创建两个对象
+        var obj = {
+            name:"孙悟空",
+            sayName:fun
+        };
+
+        var obj2 = {
+            name:"沙和尚",
+            sayName:fun
+        };
+        
+        
+        //fun();//全局
+
+        //我们希望调用obj.sayName()时可以输出obj的名字
+        // obj.sayName();//全局。？？？因为在fun函数中没有找到name属性，所以只能往上一级找，找到了全局变量
+
+        //当改为改为this.name[14],就可以实现调用obj.sayName()时可以输出obj的名字或，
+            //可以实现调用obj2.sayName()时可以输出obj2的名字
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

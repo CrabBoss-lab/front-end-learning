@@ -1,0 +1,23 @@
+.nav a{
+    display: inline-block;
+    width: 120px;
+    height: 58px;
+    background-color: pink;
+    text-align: center;
+    line-height: 58px;
+    color: white;
+    text-decoration: none;
+}
+.nav-bg1{
+    background: url(../asset/五彩导航images/bg1.png) no-repeat;
+}
+.nav-bg1:hover{
+    background-image: url(../asset/五彩导航images/bg11.png);
+
+}
+.nav-bg2{
+    background:url(../asset/五彩导航images/bg2.png) no-repeat;
+}
+.nav-bg2:hover{
+    background-image: url(../asset/五彩导航images/bg22.png);
+}

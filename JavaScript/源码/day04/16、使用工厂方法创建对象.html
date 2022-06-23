@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        发现问题：创建一个对象easy，但是创建批量的对象时会difficult
+                    出现大量的重复信息
+
+        解决问题：使用工厂方法创建对象
+        
+
+        */
+       //创建一个对象
+       var obj={
+           name: "孙悟空",
+           age: 18,
+           gender: "male",
+           sayName:function(){
+               alert(this.name);
+           }
+       }
+       /*
+       工厂方法创建对象
+            可以批量生成对象
+        
+        缺点：但是使用工厂方法创建的对象，使用的构造函数都是Object
+            所以创建的对象都是Object类型
+                就导致我们无法区分出多种不同类型的对象
+        */
+       function createPerson(name, age, gender){
+           //创建一个对象
+           var obj = new Object();
+
+           //向对象中添加属性
+           obj.name=name;//obj.name="孙悟空",
+           obj.age=age;//obj.age=18,
+           obj.gender=gender;//obj.gender="male",
+           obj.sayName=function(){
+                alert(this.name);
+           }
+
+           //将新的对象返回
+           return obj;
+        }
+        var obj2=createPerson("孙悟空",18,"male");
+        var obj3=createPerson("猪八戒",28,"male");
+        var obj4=createPerson("白骨精",18,"famale");
+        console.log(obj2);
+        console.log(obj3);
+        console.log(obj4);
+
+        obj2.sayName();
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //    var obj2={
+    //        name: "猪八戒",
+    //        age: 20,
+    //        gender: "male",
+    //        sayName:function(){
+    //            alert(this.name);
+    //        }
+    //    }
+    //    var obj={
+    //        name: "沙和尚",
+    //        age: 28,
+    //        gender: "male",
+    //        sayName:function(){
+    //            alert(this.name);
+    //        }
+    //    }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

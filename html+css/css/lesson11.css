@@ -1,0 +1,173 @@
+/*什么情况下可以看到浮动元素*/
+/*1）文本*/
+/*文本能看到浮动元素。浮动元素不意味着分层，只能说明他产生了浮动流。*/
+*{
+	margin: 0;
+	padding: 0;
+
+}
+.box{
+	float: left;
+	width: 100px;
+	height: 100px;
+	background-color: black;
+	opacity: 0.5;
+}
+/*2)img(行块级元素inline-block）*/
+*{
+	margin: 0;
+	padding: 0;
+}
+.box{
+	float: left;
+	width: 100px;
+	height: 100px;
+	background-color: black;
+	opacity: 0.5;
+}
+/*3）产生了bfc的元素*/
+*{
+	margin: 0;
+	padding: 0;
+}
+.box{
+	float: left;
+	width: 100px;
+	height: 100px;
+	background-color: black;
+	opacity: 0.5;
+}
+.demo{
+	float: left;
+	width: 150px;
+	height: 150px;
+	background-color: green;
+}
+/*4)文本类属性*/
+*{
+	margin: 0;
+	padding: 0;
+}
+.box{
+	float: left;
+	width: 100px;
+	height: 100px;
+	background-color: black;
+	opacity: 0.5;
+}
+.demo{
+	display: inline-block;
+	width: 150px;
+	height: 150px;
+	background-color: green;
+}
+
+
+/*此时变成了自适应的容器，靠内容撑起容器*/
+*{
+	margin: 0;
+	padding: 0;
+}
+.wrapper{
+	border: 1px solid black;
+}
+.content{
+	color: #fff;
+	background-color: black;
+	width: 100px;
+	height: 200px;
+}
+
+
+
+/*父级包不住了*/
+*{
+	margin: 0;
+	padding: 0;
+}
+.wrapper{
+	border: 1px solid black;
+}
+.content{
+	float: left;
+	color: #fff;
+	background-color: black;
+	width: 100px;
+	height: 200px;
+}
+/*方法二：清除浮动流*/
+*{
+	margin: 0;
+	padding: 0;
+}
+.wrapper{
+	border: 1px solid black;
+}
+.content{
+	float: left;
+	color: #fff;
+	background-color: black;
+	width: 100px;
+	height: 200px;
+}
+p{
+	border-top: 10px solid green;/*改成px即可*/
+	clear: both;
+}
+
+
+
+span::before{
+	contennt: "成哥";
+}
+span::after{
+	content: "，是的，的确是这样";
+}
+/*用伪元素清除浮动流*/
+*{
+	margin: 0;
+	padding: 0;
+}
+.wrapper::after{
+	content: "";
+	clear: both;
+	display: block;
+}
+.wrapper{
+	border: 1px solid black;
+}
+.content{
+	float: left;
+	width: 100px;
+	height: 200px;
+	background-color: black;
+	color: #fff;
+}
+/*其他方式将他包裹住————能触发 bfc 的元素*/
+*{
+	margin: 0;
+	padding: 0;
+}
+.wrapper{
+	border: 2px solid red;
+	/*以下三种均可触发bfc，实现父级包裹住子级*/
+	/*float: left;*/
+	/*display: inline-block;*/
+	position: absolute;
+}
+.content{
+	float: left;
+	width: 100px;
+	height: 200px;
+	background-color: black;
+	color: #fff;
+}
+
+
+
+/*用float实现文字环绕图片*/
+img{
+	width: 100px;
+	float: left;
+	margin-right: 10px;
+}

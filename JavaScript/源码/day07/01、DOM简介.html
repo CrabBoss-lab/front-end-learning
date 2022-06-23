@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        Document Object Model
+        文档对象模型，通过DOM可以来任意来修改网页中各个内容
+        文档
+            文档指的是网页，一个网页就是一个文档
+        对象
+            对象指将网页中的每一个节点都转换为对象
+            转换完对象以后，就可以以一种纯面向对象的形式来操作网页了
+        模型
+            模型用来表示节点和节点之间的关系，方便操作页面
+        节点（Node）
+            节点是构成网页的最基本的单元，网页中的每一个部分都可以称为是一个节点
+            虽然都是节点，但是节点的类型却是不同的
+            常用的节点
+                文档节点 （Document），代表整个网页
+                元素节点（Element），代表网页中的标签
+                属性节点（Attribute），代表标签中的属性
+                文本节点（Text），代表网页中的文本内容
+
+        */
+    </script>
+</head>
+<body>
+    <button id="btn">我是一个按钮</button>
+    <script>
+        //DOM基本操作
+        /*
+        浏览器已经为我们提供了文档节点对象，这个对象是window属性
+            可以在页面中直接使用，文档节点代表的是整个网页
+        */
+        //console.log(documents)
+
+        //获取button对象
+        var btn=document.getElementById("btn");
+
+        //修改按钮的文字
+        btn.innerHTML="I'm a BUtton";
+    </script>
+    
+</body>
+</html>

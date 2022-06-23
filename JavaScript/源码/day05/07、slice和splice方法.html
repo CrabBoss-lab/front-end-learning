@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        slice(参数1，参数2)
+            ·可以用来从数组中提取指定元素
+            ·该方法不会改变原数组，而是将截取到的元素封装到一个新数组中返回
+            ·参数：
+                1、第一个参数表示，截取开始的位置的索引,包含开始索引
+                2、第二个参数表示，截取结束的位置的索引，不包括结束索引
+                    ·第二个参数可以省略不写，此时会截取从开始索引往后得到所有元素
+                    ·索引可以传递一个负值，如果传递一个负值则从后往前，（-1倒数第一个，以此类推）
+        */
+        //var arr=["孙悟空","猪八戒","沙和尚","唐三藏","白骨精"];
+
+        //var result =arr.slice(0,2);//孙悟空，猪八戒
+
+        //var result =arr.slice(3);//唐三藏，白骨精
+
+        //var result =arr.slice(1,-2);//猪八戒，沙和尚
+
+        //console.log(result);
+
+
+
+
+        /*
+        splice()
+            ·可以用来删除数组中的指定元素
+            ·使用splice()会影响到原数组，会将指定的元素从原数组中删除
+                并将该删除的元素作为返回值返回
+            ·参数：
+                第一个参数：表示开始位置的索引
+                第二个参数：表示删除的数量
+                第三个参数及以后：可以传递一些新的元素，这些元素会自动插入到开始位置索引前面
+                
+
+        */
+        arr=["孙悟空","猪八戒","沙和尚","唐三藏","白骨精"];
+
+        //arr=arr.splice(1,2);//猪八戒，沙和尚
+
+        //arr=arr.splice(1,0);//空的，什么都没删
+
+        //var result=arr.splice(0,1,"牛魔王");//'牛魔王', '猪八戒', '沙和尚', '唐三藏', '白骨精'
+
+        var result=arr.splice(1,1,"牛魔王","红孩儿");//'孙悟空', '牛魔王', '红孩儿', '沙和尚', '唐三藏', '白骨精'
+        
+        console.log(arr);
+        //console.log(result);
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>css初见篇</title>
+	<style type="text/css">
+	div{
+		width: 100px;
+		height: 100px;
+		background-color: red;
+	}
+	#only{
+		width: 100px;
+		height: 100px;
+		background-color: green;
+	}
+
+
+
+		
+
+
+
+	</style> 
+	</head>
+<body>
+	<!-- html（结构）css（样式）JavaScript（行为） -->
+	<!-- 一.引入css -->
+	<!-- 1.行间样式 -->
+	<div style="width: 100px;height: 100px;background-color: #f80;">
+	</div>
+
+	<!-- 2.页面级css-->
+	<!-- 在head中用style标签 -->
+	<div></div> 
+
+	<!-- 3.外部css文件 -->
+	<!-- 需在head中用link标签<link rel="stylesheet" type="text/css" href="地址"> -->
+
+
+	<!-- 一.选择器 -->
+	<!-- 1.id选择器 -->
+	<div id="only">123</div>
+	<!-- 外部文件格式 #only{} -->
+
+	<!-- 2.class选择器（类选择器） -->
+	<!-- <div class="demo">123</div> -->
+	<!-- 外部文件格式 .demo{} -->
+
+	<!-- 3.标签选择器 -->
+	<!-- <div>123</div> -->
+	<!-- 外部文件格式 div{} -->
+
+	<!-- 4.通配符选择器 -->
+	<!-- 外部文件格式 *{} -->
+
+	<!-- 优先级 !important>行间样式>id>class|属性>标签>通配符 -->
+
+	
+
+	<!-- css权重
+	!important    infinity
+	行间样式        1000
+	id              100
+	class|属性|伪类   10
+	标签|伪元素        1
+	通配符             0
+	进制256
+
+ -->
+
+
+
+
+</body>
+</html>

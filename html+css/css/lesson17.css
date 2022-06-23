@@ -1,0 +1,71 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+div{
+	width: 200px;
+	
+	line-height: 20px;
+	height: 20px;
+	font-size: 12px;
+	background: #f40;
+	color: rgba(255, 255, 255, 0.8);
+}
+div::before{
+	content: "";
+	display: inline-block;
+	width: 12px;
+	height: 11px;
+	background-image: url(https://s.cn.bing.net/th?id=ODLSF.3dc6fe36-3515-4cde-96ed-218e56f5e5eb&w=16&h=16&o=6&pid=1.2);
+	background-size: 100% 100%;
+	margin-right: 5px;
+	vertical-align: -1px;/*让伪元素（图片）和字对齐线一致*/
+}
+div::after{
+	content: "";
+	display: inline-block;
+	width: 6.5px;
+	height: 11.5px;
+	background-image:url(https://s.cn.bing.net/th?id=ODLSF.3dc6fe36-3515-4cde-96ed-218e56f5e5eb&w=16&h=16&o=6&pid=1.2) ;
+	background-size: 100% 100%;
+	float: right;
+	margin-top: 3px;
+	margin-right: 2px;
+}
+
+
+/*更加好看的写法*/
+/*让字体居中，可以 line-height=height，然后用图片部分用 padding 展示出来*/
+*{
+	margin: 0;
+	padding: 0;
+}
+div{
+	padding:10px 10px ;
+	width: 100px;
+	line-height: 12px;
+	height: 12px;
+	font-size: 12px;
+	background: #f40;
+	color: rgba(255, 255, 255, 0.8);
+}
+div::before{
+	content: "";
+	display: inline-block;
+	width: 12px;
+	height: 11px;
+	background-image: url(https://s.cn.bing.net/th?id=ODLSF.3dc6fe36-3515-4cde-96ed-218e56f5e5eb&w=16&h=16&o=6&pid=1.2);
+	background-size: 100% 100%;
+	margin-right: 5px;
+	/*vertical-align: -1px;*/
+}
+div::after{
+	content: "";
+	display: inline-block;
+	width: 6.5px;
+	height: 11.5px;
+	background-image:url(https://s.cn.bing.net/th?id=ODLSF.3dc6fe36-3515-4cde-96ed-218e56f5e5eb&w=16&h=16&o=6&pid=1.2) ;
+	background-size: 100% 100%;
+	float: right;/*浮动让右边的图标向右靠*/
+
+}

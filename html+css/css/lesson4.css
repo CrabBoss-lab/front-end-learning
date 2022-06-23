@@ -1,0 +1,47 @@
+#noe{
+	/*字体*/
+	font-size: 50px;/*字体大小*/
+	font-weight: bold;/*加粗*/
+	font-style:italic ;/*italic（斜体）*/
+	font-family: cursive;
+	color:green;/*1.纯英文单词2.颜色代码3.颜色函数*/
+	/*颜色代码
+	r       g       b
+	00-ff   00-ff   00-ff
+	#000000
+	*/
+	/*颜色函数rgb（255，255，255）*/
+
+	
+}
+
+
+#two{
+	/*边框*/
+	border:100px solid black; /*外边框 三个属性值（粗细 展示形式 颜色）*/
+	width: 10px;
+	height: 10px;
+	border-right-color: red;
+	border-left-color:green;
+	border-top-color: transparent;/*透明色*/
+	border-bottom-color: blue ;
+}
+
+
+#three{
+	/*文本*/
+	border: 1px solid black;
+	text-align:center;/*文本水平对齐center ringt left*/
+	height: 200px;
+	line-height: 25px;/*单行文本高度*/
+	/*height=line-height 单行文本垂直居中*/
+	text-indent:2em;/*缩进 单位为em 1em=1*font-size=16px*/
+
+}
+span{
+	text-decoration: line-through;/*有线*/
+	text-decoration: none;/*没线*/
+	text-decoration: underline;/*下划线*/
+	text-decoration: overline;/*上划线*/
+
+}

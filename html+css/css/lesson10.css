@@ -1,0 +1,110 @@
+/*float 浮动用法：让元素排队 */
+/*少量元素排队*/
+.wrapper{
+	width: 300px;
+	height: 300px;
+	border: 1px solid black;
+}
+.content{
+	/*float：left 使方块按 123 排序*/
+	float: left;
+	/*float：right 使方块按 321 排序*/
+	/*float: right;*/
+	color: #fff;
+	background-color: black;
+	width: 100px;
+	height: 100px;
+}
+/*多个元素排队*/
+.wrapper{
+	width: 300px;
+	height: 300px;
+	border: 1px solid black;
+}
+.content{
+	/*float：left使方块按下面方法排序：
+	123
+	456
+	789*/
+	float: left;
+	/*float：left使方块按下面方法排序：
+	321
+	654
+	987*/
+	/*float: right;*/
+	/*float:left 是让元素自左向右排序，float:right 是让元素自右向左排序*/
+	color: #fff;
+	background-color: black;
+	width: 100px;
+	height: 100px;
+}
+
+
+
+
+/*扩宽了大容器*/ 
+*{
+	margin: 0;
+	padding: 0;
+}
+.wrapper{
+	width: 350px;
+	height: 300px;
+	border: 1px solid black;
+}
+.content{
+	/*float: right;使整体向右浮动，左边留出空间*/
+	/*float: right;*/
+	/*float: left;使整体向左浮动，右边留出空间*/
+	float: left;
+	color: #fff;
+	background-color: black;
+	width: 100px;
+	height: 100px;
+	/*加上以下代码实现各个元素之间分开排列
+	margin-left: 10px;
+	margin-bottom: 10px;*/
+}
+
+
+
+
+
+/*下面是按 1234,5678,9 这样站队的
+说明 float 站队时，够站一个就站一个，不够站一个就换行
+float 站队的边界就是父级元素的边界*/
+*{
+	margin: 0;
+	padding: 0;
+}
+.warpper{
+	width: 400px;
+	height: 300px;
+	border: 1px solid black;
+}
+.content{
+	float: left;
+	color: #fff;
+	background-color: black;
+	width: 100px;
+	height: 100px;
+}
+
+
+
+
+
+/*float 元素也分层了。跟 absolute 效果是类似的*/
+.box{
+	float: left;
+	width: 100px;
+	height: 100px;
+	background-color: black;
+	opacity: 0.5;
+}
+.demo{
+	width: 150px;
+	height: 150px;
+	background-color: green;
+}
+

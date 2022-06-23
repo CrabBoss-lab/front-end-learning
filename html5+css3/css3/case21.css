@@ -1,0 +1,19 @@
+li{
+	float: left;
+	width: 30px;
+	height: 30px;
+	border: 1px solid pink;
+	margin: 10px;
+	text-align: center;
+	line-height: 30px;
+	list-style: none;
+	border-radius: 50%;
+	/*鼠标经过变小手*/
+	cursor: pointer;
+	/*动画过渡*/
+	transition: all 0.5s;
+}
+li:hover{
+	/*缩放*/
+	transform: scale(1.5);
+}

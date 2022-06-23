@@ -1,0 +1,29 @@
+/*1.父子选择器/派生选择器*/
+div span{
+	background-color: red;
+}
+
+
+
+/*2.直接子元素选择器*/
+div > strong{
+	background-color: red;
+}
+
+/*3.并列选择器*/
+div.demo{
+	background-color: red;
+}
+
+/*4.分组选择器*/
+em,
+strong,
+span{
+	background-color: red;
+}
+
+/*伪类选择器*/
+a:hover{
+	background-color:orange;
+}
+

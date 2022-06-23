@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <div class="container">
+        <!-- //放置立方体的容器 -->
+        <ul class="cube init">
+            <li class="img1"><img src="./img/img1.jpg" alt=""></li>
+            <li class="img2"><img src="./img/img2.jpg" alt=""></li>
+            <li class="img3"><img src="./img/img3.jpg" alt=""></li>
+            <li class="img4"><img src="./img/img4.jpg" alt=""></li>
+            <li class="img5"><img src="./img/img5.jpg" alt=""></li>
+            <li class="img6"><img src="./img/img6.jpg" alt=""></li>
+        </ul>
+    </div>
+    <h2>点击下面的图片进行旋转</h2>
+    <div class="btnsArea">
+        <input type="image" src="./img/img1.jpg" id="show-iamge-1">
+        <input type="image" src="./img/img2.jpg" id="show-iamge-2">
+        <input type="image" src="./img/img3.jpg" id="show-iamge-3">
+        <input type="image" src="./img/img4.jpg" id="show-iamge-4">
+        <input type="image" src="./img/img5.jpg" id="show-iamge-5">
+        <input type="image" src="./img/img6.jpg" id="show-iamge-6">
+    </div>
+    <script>
+
+        (function(){ //命名空间 
+            var btns = document.getElementsByClassName('btnsArea')[0];
+            var cubeBox = document.getElementsByClassName('cube')[0];
+            var currList = cubeBox.classList;//获取当前盒子的类名列表
+                console.log(currList);
+            var init = currList[1];//init 是一个变量 =‘init’ 
+            console.log(init);
+            btns.addEventListener('click',function(e){
+                console.log(e.target.id);
+                var currentStr = e.target.id;
+                if(currentStr.length>0){
+                    currList.replace(init,currentStr);//替换init
+                    console.log(init);
+                    init = currentStr;//更新init
+                }
+
+            })
+
+
+
+
+
+
+
+        })()
+
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../css/lesson11.css">
+</head>
+<body>
+	<!--浮动元素 -->
+	<!-- 一、浮动元素产生浮动流 -->
+	<!-- （浮动流产生的效果）所有产生了浮动的元素，块级元素看不到他们。 -->
+	<!-- 产生了bfc的元素和文本类属性（带有inline属性的就是文本类属性）的元素以及文本都能看到浮动元素。 -->
+	<!-- 1）文本 -->
+	<!-- <div class="box"></div> -->
+	<!-- 2）img(行块级元素inline-block） -->
+	<!-- <div class="box"></div> 
+	<img src="C:\Users\yujunyu\Desktop\微信图片_20211103221316.jpg"> -->
+	<!-- 3）产生了bfc的元素 -->
+	<!-- div class="box"></div>
+	<div class="demo"></div>-->
+ 	<!-- 4)文本类属性 -->
+ 	 <!-- <div class="box"></div>
+	<div class="demo"></div> -->
+ 	
+
+
+ 	<!-- 时此变成了自适应的容器了，靠内容撑起容器 -->
+ 	<!-- <div class="wrapper">
+ 		<div class="content">1</div>
+ 		<div class="content">2</div>
+ 		<div class="content">3</div>
+ 	</div> -->
+
+
+ 	<!-- 当父级包不住了子元素，原因是父级是块级元素，看不到浮动元素 -->
+ 	<!-- 想父级包住子集，方法一是在wrapper加 height（只能解决一小部分）；
+ 	方法二是清除浮动流,用 clear 清除周边的浮动流;
+	clear：left；或 clear：right；或 clear：both; //一般直接写成 both -->
+ 	<!-- <div class="wrapper">
+ 		<div class="content">1</div>
+ 		<div class="content">2</div>
+ 		<div class="content">3</div>
+ 		<p></p>
+	</div> -->
+	<!-- 父级包住浮动元素的解决方法：
+    p 元素只要逻辑上在这里出生，并且清除浮动流，父级自然而然被他撑开
+  	不管有多少个 div，大盒子都会被撑开
+  	正常来说，在清除浮动的时候，是不能像上面那样通过增加<p>来改变 html 结构，
+	从而清除浮动，这种方式在开发中是不能使用的 -->
+
+
+
+	<!-- 伪元素选择器 -->
+	<!-- 伪元素天生就存在于任意一个元素（标签 tag element）里面。天生是行级元素。
+	为什么叫伪元素？因为他的元素结构是存在的，但是他没写到 HTML 里面，他可以
+	被 css 选中，并正常操作，但是他没有 html 结构，所以叫伪元素。
+	他有两个特殊的伪元素 before 和 after
+	伪元素可以跟正常元素差不多可以一起来使用，但是他没有正常的元素结构
+	一个标签诞生的时候，他就有了伪元素，伪元素存在于逻辑的最前（after）和逻辑的
+	最后（before），只是一般看不见，除非我们通过 css 选中，并操作他
+	写成 span::before{}就是选择了 span 的 before 伪元素，里面有一个必须要有的值是
+	content:“ ”。而 content 也只能用在伪元素中 -->
+	<!-- 举例 -->
+	<span>很帅</span>
+	<!-- 而为了清除float的浮动流，就可以用到伪元素，也是最好的选择 -->
+	<!-- clear 很特殊，想让他生效，必须是块级元素才可以，而::after 是行级元素，必须加上display：block； -->
+	<div class="wrapper">
+ 		<div class="content">1</div>
+ 		<div class="content">2</div>
+ 		<div class="content">3</div>
+	</div>
+	<!-- 除了 float 以外，还有其他方式将他包裹住——能触发 bfc 的元素 -->
+	<!-- 但是这种方法都是紧紧的包住，而不是把他撑开了。
+	凡是设置了 position:absolute； 或 float：left/right；他会打系统内部，把元素转换成
+	inline-block，所以由内容来决定宽高，改成 block 才能独占一行 -->
+
+
+
+	<!-- 浮动的应用最开始是实现文字环绕的 -->
+	<img class="img1" src="C:\Users\yujunyu\Desktop\微信图片_20211103221316.jpg">
+	范冰冰，1981年9月16日出生于山东青岛，华语影视女演员、制片人、歌手，范冰冰，1981年9月16日出生于山东青岛，华语影视女演员、制片人、歌手，范冰冰，1981年9月16日出生于山东青岛，华语影视女演员、制片人、歌手，范冰冰，1981年9月16日出生于山东青岛，华语影视女演员、制片人、歌手，v范冰冰，1981年9月16日出生于山东青岛，华语影视女演员、制片人、歌手，
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    width: 100%;
+    /* 最大宽度和最小宽度 */
+    max-width: 1000px;
+    min-width: 600px;
+    /* 水平居中 */
+    margin: 0 auto;
+}
+.box1,
+.box2{
+    float: left;
+    width:50%;
+    height: 300px;
+
+}
+.box1{
+    background-color: pink;
+}
+.box2{
+    background-color: purple;
+}

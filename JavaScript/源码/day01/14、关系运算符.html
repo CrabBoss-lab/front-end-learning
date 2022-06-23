@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            通过关系运算符可以比较两个值之间的大小关系
+                如果关系成立则会返回true，如果关系不成立则返回false
+            > 大于号
+                判断符号左侧的值是否大于右侧的
+                如果关系成立，则返回true；如果关系不成立，则返回false
+            >= 大于等于
+                判断左侧的值是否大于或等于右侧的值
+            < 小于
+            <= 小于等于
+
+
+            非数值的情况下
+                对于非数值进行比较时，会将其转换为数字然后再比较
+                如果符号两侧的值都是字符串，不会将其转换为数字进行比较。而会比较unicode编码
+        */
+       var result=5>10;//fasle
+       result=5>4;//true
+       result=5>5;//fasle
+
+       result=5>=5;//true
+       result=5>=4;//true
+
+
+       console.log(1>true);//fasle
+       console.log(1>=true);//true
+       console.log(1>"0");//true
+       console.log(10>null);//true
+       //任何值和NaN作比较都是false
+       console.log(10>"hello");//false
+       console.log(true>false);//true
+
+
+       //两个字符串比较时，比的是Unicode字符编码
+       console.log("1"<"5");//true
+       console.log("11"<"5");//true
+       console.log("a">"b");//false
+       //比较字符编码时一位一位比
+       console.log("abc"<"b");//true
+       //如果两位一样，则比较下一位;所以可以用来排序
+       console.log("bbc"<"b");//false
+
+       
+       //如果比较的两个字符串的数字，可能会得到不可预期的结果
+       //注意;比较两个字符串型的数字，一定要转型！！！！
+
+
+
+
+       /*
+        Unicode编码（十六进制）
+        如何使用？？
+            在字符串中使用转义字符输入Unicode编码
+                \u四位编码
+       */
+      console.log("\u2620");                                            
+
+
+    </script>
+</head>
+<body>
+    <!-- 在网页中使用Unicode编码
+        &#编码; 这里的编码需要十进制 -->
+    <div>&#9760;</div>
+</body>
+</html>

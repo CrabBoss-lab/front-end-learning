@@ -1,0 +1,166 @@
+/* 顶部导航的样式 */
+
+
+
+/* 顶部导航的布局 */
+.main-top{
+    height: 60px;
+    border-bottom: 1px solid #31323a;
+    padding: 0 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+/* 搜索区域 */
+
+.top-search{
+    height: 40px;
+    display: flex;
+    align-items: center;
+    width: 476px;
+    background: #292b35;
+    border-radius: 4px;
+}
+/* 搜索图标 */
+.top-search .iconfont{
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.4);
+    margin: 0 10px;
+}
+/* 搜索框 */
+.top-search input{
+    flex: 1 0 auto;/* 横向撑满剩余空间,使用弹性项目伸缩flex: 拉伸比例 压缩比例 初始尺寸` */
+    background: transparent;
+    outline: none;/* 去掉搜索框的默认样式 */
+    border: none;
+    font-size: 14px;
+    color: white;
+    caret-color: #fe2c55;/* 光标颜色 */
+}
+/* 搜索按钮 */
+.top-search button{
+    width: 64px;
+    height: 48px;
+    font-size: 16px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.9);
+    background: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;/* 鼠标移上去变小手 */
+}
+.top-search button:hover{
+    color: red;
+}
+/* .top-function{
+    height: 40px;
+    background: blue;
+    width: 200px;
+} */
+
+
+
+/* 功能区域 */
+
+.main-function{
+    display: flex;
+    align-items: center;
+}
+.main-function a:hover {
+    color: #fff;
+    font-weight: bold;
+}
+/* 子菜单 */
+.main-function-sub{
+    position: absolute; /* 绝对定位 */
+    line-height: normal;
+    background: #252632;
+    /*margin-left: -30px;1\土方法:让子菜单居中 */
+    border-radius: 4px;
+    display: none;/* 实现子菜单栏的隐藏 */
+    word-break: keep-all;/* 让文字不要换行 */
+    top:60px;
+    /* 中线居中(涉及到ccs3的知识点 */
+    left:50%;/* 子元素左边的线离父元素左边的线占父元素宽度的一半 */
+    z-index: 99;
+
+    transform:translateX(-50%);/* 往左边移动自身宽度的一半 */
+}
+.main-function-sub a{
+    display: block;
+    margin: 16px;
+    
+}
+/* 实现当鼠标移到.main-function-item 让 .main-function-sub显示 */
+.main-function-item:hover .main-function-sub {
+    display: block;
+  }
+.main-function-item{
+    margin: 0 12px;
+    font-size: 14px;
+    line-height: 60px;
+    position:relative ;/*相对定位 (子绝父相)*/
+}
+/* 发布视频 */
+.main-function-pub{
+    width: 108px;
+    height: 38px;
+    line-height: 38px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main-function-pub a{
+    width: 108px;
+    height: 38px;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: #fff;
+    /* 设置左右侧阴影 box-shadow:横向（负数为左）  纵向 模糊程度 颜色*/
+    box-shadow: -2px 0 0 #00faf0,2px 0 0 #fe2c55;
+    flex: 0 0 auto;
+}
+.main-function-pub a:hover{
+    box-shadow: none;
+    animation: widthchange 0.2s;
+
+}
+@keyframes widthchange {
+    0% {
+      width: 108px;
+    }
+    50% {
+      width: 116px;
+    }
+    100% {
+      width: 108px;
+    }
+  }
+
+.main-function-pub a .iconfont{
+     margin-right: 5px;/*让加号和发布视频无空隙*/
+} 
+
+/* 登录按钮 */
+.main-function button{
+    background: #fe2c55;
+    outline: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    width: 104px;
+    height: 38px;
+    line-height: 36px;
+    border-radius: 5px;
+
+}
+.main-function button:hover{
+    background: #f22a51;
+}

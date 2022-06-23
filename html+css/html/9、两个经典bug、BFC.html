@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>bug</title>
+	<link rel="stylesheet" type="text/css" href="../css/lesson9.css">
+	<style type="text/css">
+		
+		
+	</style>
+</head>
+<body>
+	<!-- 解决两个bug：margin塌陷和margin合并 -->
+	<!-- 1）margin塌陷 -->
+	<!-- 父子嵌套元素垂直方向的 margin，父子元素是结合在一起的，
+	他们两个会取其中最大的值。
+	正常情况应该是父级相对于浏览器进行定位，子级应该相对于父级定位的。
+	但是 margin 塌陷是在父级相对于浏览器进行定位时，子级没有相对于父级定位，就像父级的棚子没有了一样。
+	子级相对于父级，就像塌陷了一样。 -->
+	<div class="wrapper">
+		<div class="content"></div>
+	</div>
+
+	<!-- 2)margin合并 -->
+	<span class="box1">123</span>
+	<span class="box2">234</span>
+	<div class="demo1">1</div>
+	<div class="demo2">2</div>
+
+
+</body>
+</html>

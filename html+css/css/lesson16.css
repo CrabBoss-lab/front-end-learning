@@ -1,0 +1,42 @@
+/* 1)淘宝网左右的留白，随着浏览器的变化，就没有了。*/
+*{
+	margin: 0;
+	padding: 0;
+}
+.wrapper{
+	height: 30px;
+	background-color: #123;
+}
+.content{
+	/*想让绿色的部分居中，随着浏览器宽的改变而改变
+	只用加一个 margin:0 auto; auto 是一个自适应的意思*/
+	margin: 0 auto;
+	width: 1200px;
+	height: 30px;
+	background-color: #0f0;
+}
+
+
+/*3)*/
+/*a、*/
+*{
+	margin: 0;
+	padding: 0;
+}
+span{
+	display: inline-block;
+	width: 100px;
+	height: 100px;
+	background-color: red;
+}
+/*b、*/
+*{
+	margin: 0;
+	padding: 0;
+}
+span{
+	display: inline-block;
+	width: 100px;
+	height: 100px;
+	background-color: red;
+}

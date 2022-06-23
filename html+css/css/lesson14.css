@@ -1,0 +1,19 @@
+div{
+	width: 200px;
+	height: 200px;
+	border: 1px solid black;
+	background-image: url(https://img-home.csdnimg.cn/images/20220129112711.jpg);
+	background-size: 100px 100px;
+	background-repeat:no-repeat ;
+	background-position: 50% 50%;
+}
+/*background-image:url(这里放地址); 		图片当做背景图片来展示
+  background-size: 200px 200px; 		设置背景图片的大小，第一个是高，第二个是宽
+  background-repeat:repeat; 			默认值是 repeat，重复出现。
+  										设置成 no-repeat 就不重复出现，就只出现一张；（一般都用 no-repeat）
+										设置成 repeat-x 就是 x 轴重复；
+										设置成 repeat-y 就是 y 轴重复。
+background-position: 100px 100px; 		设置图片在容器中的位置，图片的左上定点离容器的左上定点的距离。
+background-position:left bottom;  		左下。 填 center center 就居正中了
+background-position:50% 50%;    		就是居正中，和 center center 一样，不是按照左上定点来居中的
+*/

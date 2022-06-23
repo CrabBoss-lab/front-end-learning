@@ -1,0 +1,111 @@
+/*侧边栏所有样式*/
+
+
+/* 侧边栏logo样式 */
+.aside-logo{
+	height: 60px;
+	display: flex;/* 设置弹性盒 */
+	justify-content: center;/* 主轴居中 */
+	align-items: center;/* 侧轴居中 */
+}
+.aside-logo a{
+	background: url(../asset/logo.svg);
+	width: 91px;
+	height: 34px;
+	display: block;
+	
+}
+.aside-logo h1{
+	display: none;
+}
+.aside-main{
+	height: calc(100vh - 60px);
+	overflow: hidden scroll;
+}
+
+
+
+/* 侧边栏菜单样式 */
+/* a元素的样式 */
+.aside-menu a{
+	height: 36px;
+	display: flex;/* 弹性盒 */
+	align-items: center;/* 侧轴居中 */
+	margin-top: 12px;/*所有a元素之间间隙12px */
+	margin-left: 44px;/*所有a元素距离左侧44px */
+}
+/* 文字字体的样式 */
+.aside .iconfont{
+	font-size: 24px;
+	margin-right:5px ;
+}
+/* 实现第一个a元素起初样式和其他元素当鼠标移上去的样式 */
+.aside-menu a.active,
+.aside-menu a:hover{
+	color: white;
+	font-weight: bold;
+}
+/* 实现a元素的宽度随着内容的变化而变化,可将a元素的父元素设置弹性盒 */
+.aside-menu{
+	display: flex;
+	flex-wrap: wrap;/*当子元素溢出父容器时自动换行 */
+}
+/* 中间的横线 */
+.aside-split{
+	width: 70px;
+	height: 1px;
+	background-color: #31323a;
+	margin-left: 41px;
+	margin-top: 10px;
+}
+
+
+/* 侧边栏页脚样式 */
+/* 整个页脚统一的样式 */
+.aside-footer{
+	font-size: 12px;
+	margin-top: 40px;
+	padding: 0 10px;
+	padding-bottom: 40px;
+}
+/* 前两部分的统一样式 */
+.aside-section{
+	color: rgba(255,255, 255, 0.4);
+	border-bottom: 1px solid #31323a;
+    padding:10px 0 ;
+}
+/* 第一部分图片样式 */
+.aside-section img{
+	width: 12px;
+	height: 12px;
+}
+/* 前两部分段落间距 */
+.aside-section p{
+	margin-top: 10px;
+
+}
+/*实现第三部分横向排列*/
+.aside-links{
+	display: flex;
+	flex-wrap: wrap;
+	padding-top: 20px;
+}
+/*设置a元素之间的间隙 */
+.aside-links a{
+	margin-top: 8px;
+	margin-right: 12px;
+
+}
+/* 选中第偶数个子元素anth-child(even)，将它们的margin-right设置为0 */
+.aside-links a:nth-child(even)
+{
+	margin-right: 0;
+}
+
+
+
+/* 侧边栏滚动条设置 */
+.aside-main::-webkit-scrollbar{
+	/* width设置为0即可隐藏滚动条 */
+	width: 0;
+}

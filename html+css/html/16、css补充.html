@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../css/lesson16.css">
+
+
+</head>
+<body>
+
+	<!-- 1)淘宝网左右的留白，随着浏览器的变化，就没有了。 -->
+	<div class="wrapper">
+		<div class="content"></div>
+	</div>
+
+
+	<!-- 2)inline 和 inline-block 都是文本类元素 -->
+	<!-- 凡是带有 inline 属性的元素，都有文本类特点，所以叫文本类元素;
+	而 img 是 inline-block -->
+	<!-- 例：解决图片之间有缝隙的bug
+	写成<img scr = “”><img scr = “”><img scr = “”>这样就可以解决了（在一行写，并且
+	不写空格），写成一行，图片间的空格就没有了
+	原理：在代码上传服务器时会进行两种压缩方法，
+	A 字符压缩（如把 img 用 A 代替）
+	B 去空格，去回车 -->
+
+
+	
+	<!-- 3）-->
+	<!--a、给行级元素加上 position:absolute；和 float:left/right 会内部隐式的把属性改成
+	display:inline-block;就可以加宽高了。 -->
+	<span></span>  呵呵
+
+	<!-- b、文本和文本之间都是默认的底对齐。
+	文本和图片之间也是底对齐。但是把 span 变成 inline-block，一旦 span 里面放了文字，
+	那么外面的文字就和和他里面的文字进行底对齐。 -->
+	<span>123</span>  呵呵
+
+	<!-- c、vertical-align:10px;文字就会往下调，如果是-10px，就会往上调 middle 是中对齐 -->
+
+	<!-- d、例：淘宝的导航员是用 span 或者 ul，li 做的是两个小容器，一个往左浮动，一个往右浮动 -->
+	<div>
+		<ul style="float: left;"></ul>
+		<ul style="float:right;"></ul>
+	</div>
+
+
+	
+
+
+
+</body>
+</html>

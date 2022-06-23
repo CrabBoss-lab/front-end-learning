@@ -1,0 +1,110 @@
+/*margin塌陷及解决方案*/
+/*bug还原如下代码*/
+*{
+	margin: 0;
+	padding: 0;
+}
+.wrapper{
+	width: 100px;
+	height: 100px;
+	background-color: black;
+	margin-left: 100px;
+	margin-top: 100px;
+}
+.content{
+	width: 50px;
+	height: 50px;
+	background-color: green;
+	margin-left: 50px;
+	margin-top: 100px;
+}
+/*在.content中设置 margin-top:100px;时失效了 绿色的方块并没有跟着动;
+而当 margin-top:150px;时（大于父级高），那么绿色的就会带着父级黑色的一起动*/
+
+
+
+/*margin塌陷解决方案（用bfc，改变父级的渲染程度*/
+/*弥补 margin 塌陷，可以使用 bfc，如何触发一个盒子的 bfc？
+1）position:absolute;
+2）display:inline-block;
+3）float:left/right; //浮动
+4）overflow:hidden; //溢出盒子的部分要隐藏展示*/
+/*这四种方法都能触发 bfc，但是使用的时候都带来了新的麻烦
+在具体情况中，针对需求，哪个触发方式没有影响，就用哪个解决塌陷问题*/
+
+
+
+/*margin合并及解决方案*/
+/*bug还原代码如下*/
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box1{
+			background-color: red;
+			margin-right: 100px;
+
+		}
+		.box2{
+			background-color: green;
+			margin-left: 100px;
+		}
+		.demo1{
+			background-color: red;
+			/*margin-bottom: 100px;*/
+		}
+		.demo2{
+			background-color:green;
+			/*margin-bottom: 100px;*/
+		}
+		/*在.demo1中设置margin-bottom：100px和在.demo1和.demo2两者都设置margin-bottom：100px；的效果一样。
+		demo1 和 demo2 之间的 margin 还是 100px;
+		两个兄弟结构的元素，他俩垂直方向的 margin 是合并的;
+		*/
+
+		/*margin合并依然使用bfc解决*/
+		/*方案一：给 demo2 加上一层并加了 overflow: hidden;
+		两个之间的 margin 变 200px.
+		代码如下：
+		html：
+		<div class="wrapper">
+			<div class="demo2">2</div>
+		</div>
+		css：
+		.demo1{
+			background-color: red;
+			margin-bottom: 200px;
+		}
+		.demo2{
+			background-color:green;
+			margin-bottom: 100px;
+		.wrapper{
+			overfolw: hidden;
+		}
+		}*/
+		/*方案二：把这两个都加上一层bfc
+		代码如下：
+		html：
+		<div class="wrapper">
+			<div class="demo1">1</div>
+		</div>
+		<div class="wrapper">
+			<div class="demo2">2</div>
+		</div>
+		css：
+		.demo1{
+			background-color: red;
+			margin-bottom: 200px;
+		}
+		.demo2{
+			background-color:green;
+			margin-bottom: 100px;
+		.wrapper{
+			overfolw: hidden;
+		}
+
+		*/
+		/*但是上面这两种解决 margin 合并的方法，改变了 HTML 的结构，这在开发中是不允许的
+实际开发中，在 margin 合并这个 bug 上，我们不用 bfc（不能改变 html 的结构）。
+假如我们需要两个 div 直接有 300px，那就设置上面的 margin-bottom:300px;来解决距
+离的问题
